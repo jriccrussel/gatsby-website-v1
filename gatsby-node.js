@@ -51,7 +51,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
     const res = await graphql(`
       query{
-        allContentfulBlogPost(limit: 1000){
+        allContentfulBlogPost{
           edges{
             node{
               slug
