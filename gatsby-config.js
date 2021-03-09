@@ -1,10 +1,17 @@
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Bootcamp',
-    author: 'Jeffone Audric Russel'
+    author: 'Mehmet N. Yarar',
   },
   plugins: [
     'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -21,8 +28,8 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 960,
-              linkImagesToOriginal: false,
+              maxWidth: 750,
+              linkImagesToOriginal: false
             }
           }
         ]
